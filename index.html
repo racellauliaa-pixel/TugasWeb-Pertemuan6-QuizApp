@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pop Quiz — Interactive Quiz App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="board">
+
+  <div class="quiz-app" id="authScreen">
+    <div class="pin"></div>
+
+    <header class="quiz-header">
+      <h1 class="quiz-title">Pop Quiz</h1>
+    </header>
+
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab active" data-tab="login">Masuk</button>
+      <button type="button" class="auth-tab" data-tab="register">Daftar</button>
+    </div>
+
+    <form id="authForm" class="auth-form">
+      <label class="field-label">
+        Nama Pengguna
+        <input type="text" id="usernameInput" autocomplete="username" required>
+      </label>
+      <label class="field-label">
+        Kata Sandi
+        <input type="password" id="passwordInput" autocomplete="current-password" required>
+      </label>
+
+      <p class="auth-error hidden" id="authError"></p>
+
+      <button type="submit" class="stamp-btn stamp-btn--next" id="authSubmitBtn">Masuk</button>
+    </form>
+  </div>
+
+  <div class="quiz-app hidden" id="menuScreen">
+    <div class="pin"></div>
+
+    <header class="quiz-header">
+      <h1 class="quiz-title">Pop Quiz</h1>
+      <button type="button" class="logout-link" id="logoutBtn">Keluar</button>
+    </header>
+
+    <p class="welcome-text" id="welcomeText"></p>
+
+    <h2 class="section-label">Riwayat Percobaan</h2>
+    <div class="history-list" id="historyList"></div>
+
+    <button type="button" class="stamp-btn stamp-btn--next menu-start-btn" id="startQuizBtn">Mulai Quiz</button>
+  </div>
+
+  <div class="quiz-app hidden" id="quizApp">
+    <div class="pin"></div>
+
+    <header class="quiz-header">
+      <h1 class="quiz-title">Pop Quiz</h1>
+      <p class="quiz-meta" id="progress"></p>
+    </header>
+
+    <div class="tally-row" id="tallyRow"></div>
+
+    <div class="quiz-content" id="quizContent">
+      <div class="question-row">
+        <span class="question-badge" id="questionBadge"></span>
+        <h2 id="question" class="question-text"></h2>
+      </div>
+
+      <div id="options" class="options"></div>
+
+      <button id="nextBtn" class="stamp-btn stamp-btn--next hidden">Lanjut</button>
+    </div>
+
+    <div class="result hidden" id="result">
+      <div class="grade-stamp" id="gradeStamp">
+        <span class="grade-stamp__label">Nilai</span>
+        <span class="grade-stamp__value" id="scoreValue"></span>
+      </div>
+      <p class="high-score" id="highScore"></p>
+      <div class="result-actions">
+        <button id="restartBtn" class="stamp-btn stamp-btn--restart">Ulang</button>
+        <button id="backToMenuBtn" class="stamp-btn stamp-btn--restart">Kembali</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
